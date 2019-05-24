@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>miaomiao</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1206210_q56gigy7rij.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    let html = document.querySelector('html');
+    let Width = document.documentElement.clientWidth;
+    let fontSize = Width / 20;
+    fontSize = fontSize>50 ? 50 : fontSize;
+    html.style.fontSize = fontSize + 'px';
+  </script>
+</html>
