@@ -4,13 +4,13 @@
     <div class="cinema-nav">
       <ul class="links">
         <router-link to="/home/citylist" tag="li">
-          <span>全城<i class="iconfont icon-sanx-up"></i></span>
+          <span>全城<i class="iconfont">&#xe670;</i></span>
         </router-link>
         <router-link to="/home/citylist" tag="li">
-          <span>品牌<i class="iconfont icon-sanx-up"></i></span>
+          <span>品牌<i class="iconfont">&#xe670;</i></span>
         </router-link>
         <router-link to="/home/citylist" tag="li">
-          <span>特色<i class="iconfont icon-sanx-up"></i></span>
+          <span>特色<i class="iconfont">&#xe670;</i></span>
         </router-link>
       </ul>
     </div>
@@ -58,7 +58,6 @@ import { Toast } from 'mint-ui'
         this.isLoading = true;
         this.$axios.get('/api/cinemaList?cityId='+cityId)
         .then(res=>{
-          console.log(res);
           if(res.status === 200){
             this.cinemaInfos = res.data.data.cinemas;
             this.isLoading = false;

@@ -49,7 +49,6 @@ import { Toast } from 'mint-ui';
     watch:{
       keyWords(newVal){
         this.cancelRequest();
-        console.log(newVal);
         var that = this;
         var cityId = this.$store.state.City.id;
           this.$axios.get('/api/searchList?cityId='+ cityId +'&kw='+newVal,{
@@ -58,7 +57,6 @@ import { Toast } from 'mint-ui';
             })
           })
           .then(res=>{
-            console.log(res);
             if(res.data.status === 0 && res.data.data.movies){
               this.searchList = res.data.data.movies.list;
             }else{
@@ -74,9 +72,8 @@ import { Toast } from 'mint-ui';
                   console.log('Rquest canceled', err.message); //请求如果被取消，这里是返回取消的message
               } else {
                   //handle error
-                  console.log(err);
                    Toast({
-                        message: '服务器错误'+err,
+                        message: '网络连接错误'+err,
                         position: 'middle',
                         duration: 3000
                     });

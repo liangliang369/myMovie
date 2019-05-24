@@ -19,6 +19,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { Toast } from 'mint-ui'
   export default {
     name:'CityList',
     data() {
@@ -55,10 +56,13 @@ import BScroll from 'better-scroll'
                 window.localStorage.setItem('cityList',JSON.stringify(cityList));
                 window.localStorage.setItem('hotList',JSON.stringify(hotList));
               }
-              console.log(res);
             })
             .catch(err=>{
-              console.log(err)
+              Toast({
+                message: '网络连接错误'+err,
+                position: 'middle',
+                duration: 3000
+              });
             })
          }
         

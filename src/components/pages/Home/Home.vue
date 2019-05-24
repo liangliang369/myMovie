@@ -45,27 +45,24 @@ import { Toast } from 'mint-ui'
              }
              }).catch(err => { 
              if (err == 'cancel') {     //取消的回调
-               console.log(2);
              } 
         });
-        console.log(this.nm);
-        console.log(this.id)
       },
       changeLoation(){
         this.$axios.get('/api/getLocation').then(res=>{
           var status = res.status;
-          console.log(res)
           if(status === 200){
-            console.log(res)
             var nm = res.data.data.nm;
             var id = res.data.data.id;
-            console.log(nm);
-             console.log(id);
              this.nm = nm;
              this.id = id;
           }
         }).catch(err=>{
-          console.log(err)
+          Toast({
+              message: '网络连接错误',
+              position: 'middle',
+              duration: 3000
+            });
         })
       }
     },

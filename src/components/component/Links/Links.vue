@@ -2,7 +2,7 @@
   <div>
     <ul class="links">
       <router-link to="/home/citylist" tag="li">
-        <span>{{nm}}<i class="iconfont icon-sanx-up"></i></span>
+        <span>{{nm}}<i class="iconfont">&#xe603;</i></span>
       </router-link>
       <router-link to="/home/hotplaying" tag="li">
         <span>正在热映</span>
@@ -12,7 +12,7 @@
       </router-link>
       <router-link to="/home/search" tag="li">
         <span>
-          <i class="iconfont icon-sousuo"></i>
+          <i class="iconfont">&#xe639;</i>
         </span>
       </router-link>
     </ul>

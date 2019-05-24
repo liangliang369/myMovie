@@ -62,7 +62,6 @@ import { Toast } from 'mint-ui';
         })
       },
       handleTodetail(id){
-        console.log(id)
         this.$router.push('/home/detail/'+id)
       }
     },

@@ -27,7 +27,7 @@
         <div class="movie-rating">
             <!-- 想看人数 -->
             <div class="watched">
-              <span class="logo"><i class="iconfont icon-maoyandianying"></i>实时口碑</span>
+              <span class="logo"><i class="iconfont">&#xe67e;</i>实时口碑</span>
               <div class="watched-num">
                 <span>{{detailMovie.wish}}想看</span>
                 <span>{{detailMovie.watched}}看过</span>
@@ -54,7 +54,7 @@
         <div class="brief">
           <div class="top">
             <h4>简介</h4>
-            <span @touchstart="toggle">展开<i class="iconfont icon-xiala"></i></span>
+            <span @touchstart="toggle">展开<i class="iconfont">&#xe600;</i></span>
           </div>
           <div :class="[{over:isOver},'drief-cont']">
             {{detailMovie.dra}}
@@ -64,7 +64,7 @@
         <div class="performer">
           <div class="top">
             <h4>演员人员</h4>
-            <span @touchstart="toggle">全部{{detailMovie.photos.length}}人<i class="iconfont icon-xiala1"></i></span>
+            <span @touchstart="toggle">全部{{detailMovie.photos.length}}人<i class="iconfont">&#xe600;</i></span>
           </div>
           <div class="sw-list">
             <swiper :options="swiperOption">
@@ -80,7 +80,7 @@
         <div class="video-Stills">
           <div class="top">
             <h4>视频剧照</h4>
-            <span @touchstart="toggle">全部{{detailMovie.photos.length}}张<i class="iconfont icon-xiala1"></i></span>
+            <span @touchstart="toggle">全部{{detailMovie.photos.length}}张<i class="iconfont">&#xe65e;</i></span>
           </div>
           <div class="sw-list">
             <swiper :options="swiperOption">
@@ -100,6 +100,7 @@
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { Toast } from 'mint-ui';
   export default {
     name:'Detail',
     data() {
@@ -123,7 +124,6 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
     methods:{
       handleToBack(){
         this.$router.back();
-        console.log('back')
       },
       getDetailData(){
         this.$axios.get('/api/detailmovie?movieId='+this.id)
@@ -131,11 +131,14 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           if(res.status === 200 ){
             this.detailMovie = res.data.data.detailMovie;
             this.isLoading = false;
-            console.log( this.detailMovie)
           }
         })
         .catch(err=>{
-          console.log(err);
+          Toast({
+            message: '网络连接错误'+err,
+            position: 'middle',
+            duration: 3000
+          });
         })
       },
       toggle(){

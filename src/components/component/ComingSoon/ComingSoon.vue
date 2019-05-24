@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui'
   export default {
     name:'ComingSoon',
     data() {
@@ -37,7 +38,6 @@
         this.isLoading = true;
         this.$axios.get('/api/movieComingList?cityId='+cityId)
         .then(res=>{
-          console.log(res);
           if(res.data.status ===0){
             this.comingList = res.data.data.comingList;
             this.isLoading = false;
@@ -46,11 +46,14 @@
           
         })
         .catch(err=>{
-          console.log(err)
+          Toast({
+            message: '网络连接错误'+err,
+            position: 'middle',
+            duration: 3000
+          });
         })
       },
       handleTodetail(id){
-        console.log(id)
         this.$router.push('/home/detail/'+id)
       }
     },

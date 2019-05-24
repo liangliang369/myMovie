@@ -2,15 +2,15 @@
   <div class="tabbar">
     <ul class="tabbar-menu">
       <router-link to="/home" tag="li">
-        <i class="iconfont icon-dianying"></i>
+        <i class="iconfont">&#xe6af;</i>
         <p>电影</p>
       </router-link>
       <router-link to="/cinema" tag="li">
-        <i class="iconfont icon-dianying"></i>
+        <i class="iconfont">&#xe6af;</i>
         <p>影院</p>
       </router-link>
       <router-link to="/profile" tag="li">
-        <i class="iconfont icon-my"></i>
+        <i class="iconfont">&#xe687;</i>
         <p>我的</p>
       </router-link>
     </ul>
