@@ -13,7 +13,7 @@
     "axios": "^0.18.0",
     "better-scroll": "^1.15.2",
     "mint-ui": "^2.2.13",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "vant": "^1.6.19",
     "vue": "^2.5.2",
